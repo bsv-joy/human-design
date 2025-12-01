@@ -14,6 +14,17 @@ interface Manifesto {
     author: string;
     created_at: string;
     updated_at: string;
+    // Human Design Chart Fields
+    birth_datetime_utc?: string; // Stored as ISO string
+    birth_latitude?: number;
+    birth_longitude?: number;
+    birth_timezone_str?: string;
+    chart_type?: string;
+    chart_strategy?: string;
+    chart_inner_authority?: string;
+    chart_profile?: string;
+    chart_incarnation_cross?: string;
+    chart_data_json?: string; // JSON string
 }
 
 export default function ManifestoPage() {
@@ -96,7 +107,16 @@ export default function ManifestoPage() {
                         Edit Design
                     </Link>
                 </div>
-                <ManifestoContent title={manifesto.title} content={manifesto.content} author={manifesto.author} />
+                <ManifestoContent
+                    title={manifesto.title}
+                    content={manifesto.content}
+                    author={manifesto.author}
+                    chart_type={manifesto.chart_type}
+                    chart_strategy={manifesto.chart_strategy}
+                    chart_inner_authority={manifesto.chart_inner_authority}
+                    chart_profile={manifesto.chart_profile}
+                    chart_incarnation_cross={manifesto.chart_incarnation_cross}
+                />
             </div>
         );
     }
