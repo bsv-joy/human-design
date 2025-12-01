@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-gold-50: #fbf7e6;
+  --color-gold-100: #f5ecc3;
+  --color-gold-200: #ebd991;
+  --color-gold-300: #dfc055;
+  --color-gold-400: #d4af37; /* Primary Gold */
+  --color-gold-500: #b89228;
+  --color-gold-600: #96711d;
+  --color-gold-700: #78561a;
+  --color-gold-800: #63461b;
+  --color-gold-900: #553b1b;
+
+  --color-electric-50: #f0fdfa;
+  --color-electric-100: #ccfbf1;
+  --color-electric-200: #99f6e4;
+  --color-electric-300: #5eead4;
+  --color-electric-400: #2dd4bf;
+  --color-electric-500: #14b8a6;
+  --color-electric-600: #0d9488;
+  --color-electric-700: #0f766e;
+  --color-electric-800: #115e59;
+  --color-electric-900: #134e4a;
+}
+
+:root {
+  --background: #050505;
+  --foreground: #ededed;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-300 via-gold-400 to-gold-600;
+  }
+  
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+}
